@@ -1,0 +1,38 @@
+// app.rc - zasoby Windows: ikona aplikacji i informacje o wersji.
+//
+// Nazwa "GLFW_ICON" jest wazna: GLFW (uzywany przez raylib) sam laduje ikone
+// o tej nazwie dla okna -> ikona na pasku tytulu (lewy gorny rog) i pasku
+// zadan. Eksplorator / pulpit / skroty uzywaja pierwszej ikony w pliku exe,
+// czyli tej samej. Plik app.ico zawiera rozmiary 16..256 px.
+#include <winver.h>
+
+GLFW_ICON ICON "app.ico"
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION     1,0,0,0
+ PRODUCTVERSION  1,0,0,0
+ FILEFLAGSMASK   0x3fL
+ FILEFLAGS       0x0L
+ FILEOS          VOS_NT_WINDOWS32
+ FILETYPE        VFT_APP
+ FILESUBTYPE     VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041504b0"
+        BEGIN
+            VALUE "CompanyName",      "Brzozowa Saga\0"
+            VALUE "FileDescription",  "Brzozowa Saga - Pieczec Switu\0"
+            VALUE "FileVersion",      "1.0.0.0\0"
+            VALUE "InternalName",     "BrzozowaSaga\0"
+            VALUE "OriginalFilename", "BrzozowaSaga.exe\0"
+            VALUE "ProductName",      "Brzozowa Saga\0"
+            VALUE "ProductVersion",   "1.0.0.0\0"
+            VALUE "LegalCopyright",   "(c) 2026\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0415, 1200
+    END
+END
